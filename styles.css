@@ -35,6 +35,11 @@ body{background:#0b0805;font-family:'Jost',system-ui,sans-serif;-webkit-font-smo
 .cdot{display:inline-block;width:5px;height:5px;border-radius:50%;background:#e0b06a;transition:box-shadow .35s}
 @media (hover:hover){.cart:hover .cdot{box-shadow:0 0 10px rgba(224,176,106,.9)}}
 
+/* keyboard focus */
+a:focus-visible{outline:2px solid #e0b06a;outline-offset:4px;border-radius:3px}
+.btn:focus-visible{outline-offset:5px}
+#a1:focus-visible~.aWrap .ad1,#a2:focus-visible~.aWrap .ad2,#a3:focus-visible~.aWrap .ad3{outline:2px solid #e0b06a;outline-offset:3px}
+
 /* ---- hero body ---- */
 .aWrap{position:relative;z-index:3;flex:1;max-width:1280px;width:100%;margin:0 auto;padding:clamp(22px,3vw,38px) clamp(20px,4vw,56px) clamp(18px,2.4vw,26px);display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center}
 
@@ -135,13 +140,15 @@ body{background:#0b0805;font-family:'Jost',system-ui,sans-serif;-webkit-font-smo
 
 @media (max-width:640px){
   .nav{gap:16px}
+  .navToggle{display:block;position:absolute;width:1px;height:1px;opacity:0;margin:-1px;padding:0;border:0;overflow:hidden;pointer-events:none}
+  #navToggle:focus-visible~.burger{outline:2px solid #e0b06a;outline-offset:3px;border-radius:6px}
   .burger{display:flex;order:3}
   .login{display:none}
   .navLogin{display:block}
   .navList{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:22px;margin:0;padding:26px clamp(20px,4vw,56px) 30px;background:rgba(11,7,4,.99);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(224,176,106,.16);box-shadow:0 26px 50px -22px rgba(0,0,0,.85);font-size:16px;letter-spacing:.4px;display:none;z-index:6}
   #navToggle:checked~.navList{display:flex;animation:navIn .35s cubic-bezier(.2,.7,.2,1) both}
   .navLogin{margin-top:4px;padding-top:20px;border-top:1px solid rgba(243,236,226,.12);color:#e0b06a}
-  .aWrap h1{font-size:clamp(42px,12.5vw,62px)!important;line-height:.95!important}
+  .heroTitle{font-size:clamp(42px,12.5vw,62px)!important;line-height:.95!important}
   .aStage{height:clamp(228px,56vw,272px)}
   .aBot img{height:clamp(198px,50vw,240px)}
   .aBot{transition:opacity .55s ease,transform .7s cubic-bezier(.22,.62,.2,1),visibility .55s}
